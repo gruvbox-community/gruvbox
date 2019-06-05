@@ -551,7 +551,7 @@ if exists('v:vim_did_enter')
 else
   augroup GruvboxVimEnter
     au!
-    autocmd VimEnter * let g:vim_did_enter = true
+    autocmd VimEnter * let g:vim_did_enter = 1
   augroup End
 endif
 if get(g:, 'vim_did_enter', 0)
