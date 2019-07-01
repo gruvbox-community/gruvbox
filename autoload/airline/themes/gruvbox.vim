@@ -25,6 +25,8 @@ function! airline#themes#gruvbox#refresh()
   let g:airline#themes#gruvbox#palette.normal_modified.airline_warning = warning_group
   let g:airline#themes#gruvbox#palette.normal.airline_error = error_group
   let g:airline#themes#gruvbox#palette.normal_modified.airline_error = error_group
+  let g:airline#themes#gruvbox#palette.normal.airline_term = s:N3
+  let g:airline#themes#gruvbox#palette.normal_modified.airline_term = s:N3
 
   let s:I1 = airline#themes#get_highlight2(['GruvboxBg0', 'fg'], ['Identifier', 'fg'])
   let s:I2 = s:N2
@@ -35,6 +37,8 @@ function! airline#themes#gruvbox#refresh()
   let g:airline#themes#gruvbox#palette.insert_modified.airline_warning = g:airline#themes#gruvbox#palette.normal_modified.airline_warning
   let g:airline#themes#gruvbox#palette.insert.airline_error = g:airline#themes#gruvbox#palette.normal.airline_error
   let g:airline#themes#gruvbox#palette.insert_modified.airline_error = g:airline#themes#gruvbox#palette.normal_modified.airline_error
+  let g:airline#themes#gruvbox#palette.insert.airline_term = g:airline#themes#gruvbox#palette.normal.airline_term
+  let g:airline#themes#gruvbox#palette.insert_modified.airline_term = g:airline#themes#gruvbox#palette.normal_modified.airline_term
 
   let s:R1 = airline#themes#get_highlight2(['GruvboxBg0', 'fg'], ['Structure', 'fg'])
   let s:R2 = s:I2
@@ -45,6 +49,8 @@ function! airline#themes#gruvbox#refresh()
   let g:airline#themes#gruvbox#palette.replace_modified.airline_warning = g:airline#themes#gruvbox#palette.normal_modified.airline_warning
   let g:airline#themes#gruvbox#palette.replace.airline_error = g:airline#themes#gruvbox#palette.normal.airline_error
   let g:airline#themes#gruvbox#palette.replace_modified.airline_error = g:airline#themes#gruvbox#palette.normal_modified.airline_error
+  let g:airline#themes#gruvbox#palette.replace.airline_term = g:airline#themes#gruvbox#palette.normal.airline_term
+  let g:airline#themes#gruvbox#palette.replace_modified.airline_term = g:airline#themes#gruvbox#palette.normal_modified.airline_term
 
   let s:V1 = airline#themes#get_highlight2(['GruvboxBg0', 'fg'], ['Question', 'fg'])
   let s:V2 = s:N2
@@ -55,6 +61,8 @@ function! airline#themes#gruvbox#refresh()
   let g:airline#themes#gruvbox#palette.visual_modified.airline_warning = g:airline#themes#gruvbox#palette.normal_modified.airline_warning
   let g:airline#themes#gruvbox#palette.visual.airline_error = g:airline#themes#gruvbox#palette.normal.airline_error
   let g:airline#themes#gruvbox#palette.visual_modified.airline_error = g:airline#themes#gruvbox#palette.normal_modified.airline_error
+  let g:airline#themes#gruvbox#palette.visual.airline_term = g:airline#themes#gruvbox#palette.normal.airline_term
+  let g:airline#themes#gruvbox#palette.visual_modified.airline_term =  g:airline#themes#gruvbox#palette.normal_modified.airline_term
 
   let s:C1 = airline#themes#get_highlight2(['GruvboxBg0', 'fg'], ['GruvboxGreen', 'fg'])
   let s:C2 = s:I2
@@ -65,6 +73,8 @@ function! airline#themes#gruvbox#refresh()
   let g:airline#themes#gruvbox#palette.commandline_modified.airline_warning = g:airline#themes#gruvbox#palette.normal_modified.airline_warning
   let g:airline#themes#gruvbox#palette.commandline.airline_error = g:airline#themes#gruvbox#palette.normal.airline_error
   let g:airline#themes#gruvbox#palette.commandline_modified.airline_error = g:airline#themes#gruvbox#palette.normal_modified.airline_error
+  let g:airline#themes#gruvbox#palette.commandline.airline_term = g:airline#themes#gruvbox#palette.normal.airline_term
+  let g:airline#themes#gruvbox#palette.commandline_modified.airline_term = g:airline#themes#gruvbox#palette.normal.airline_term
 
   let s:IA = airline#themes#get_highlight2(['TabLine', 'fg'], ['CursorLine', 'bg'])
   let g:airline#themes#gruvbox#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
