@@ -386,7 +386,6 @@ if exists('g:gruvbox_number_column')
 endif
 
 let s:sign_column = s:gb.bg1
-
 if exists('g:gruvbox_sign_column')
   let s:sign_column = get(s:gb, g:gruvbox_sign_column)
 endif
@@ -401,10 +400,10 @@ if exists('g:gruvbox_vert_split')
   let s:vert_split = get(s:gb, g:gruvbox_vert_split)
 endif
 
-let s:invert_signs = ''
+let s:invert_signs = s:inverse
 if exists('g:gruvbox_invert_signs')
-  if g:gruvbox_invert_signs == 1
-    let s:invert_signs = s:inverse
+  if g:gruvbox_invert_signs == 0
+    let s:invert_signs = ''
   endif
 endif
 
@@ -415,10 +414,17 @@ if exists('g:gruvbox_invert_selection')
   endif
 endif
 
-let s:invert_tabline = ''
+let s:invert_diff = s:inverse
+if exists('g:gruvbox_invert_diff')
+  if g:gruvbox_invert_diff == 0
+    let s:invert_diff = ''
+  endif
+endif
+
+let s:invert_tabline = s:inverse
 if exists('g:gruvbox_invert_tabline')
-  if g:gruvbox_invert_tabline == 1
-    let s:invert_tabline = s:inverse
+  if g:gruvbox_invert_tabline == 0
+    let s:invert_tabline = ''
   endif
 endif
 
@@ -593,7 +599,7 @@ hi! link VisualNOS Visual
 call s:HL('Search', s:hls_highlight, s:gb.bg0, s:inverse)
 call s:HL('IncSearch', s:hls_cursor, s:gb.bg0, s:inverse)
 
-call s:HL('QuickFixLine', s:gb.bg0, s:gb.yellow, s:bold) 
+call s:HL('QuickFixLine', s:gb.bg0, s:gb.yellow, s:bold)
 
 call s:HL('Underlined', s:gb.blue, s:none, s:underline)
 
@@ -736,14 +742,14 @@ endif
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:gb.red, s:gb.bg0, s:inverse)
-call s:HL('DiffAdd',    s:gb.green, s:gb.bg0, s:inverse)
+call s:HL('DiffDelete', s:gb.red, s:sign_column, s:invert_diff)
+call s:HL('DiffAdd',    s:gb.green, s:sign_column, s:invert_diff)
 "call s:HL('DiffChange', s:gb.bg0, s:gb.blue)
 "call s:HL('DiffText',   s:gb.bg0, s:gb.yellow)
 
 " Alternative setting
-call s:HL('DiffChange', s:gb.aqua, s:gb.bg0, s:inverse)
-call s:HL('DiffText',   s:gb.yellow, s:gb.bg0, s:inverse)
+call s:HL('DiffChange', s:gb.aqua, s:sign_column, s:invert_diff) 
+call s:HL('DiffText',   s:gb.yellow, s:sign_column, s:invert_diff)
 
 " }}}
 " Spelling: {{{
@@ -1506,7 +1512,7 @@ hi! link haskellAssocType GruvboxAqua
 
 hi! link haskellNumber GruvboxAqua
 hi! link haskellPragma GruvboxRedBold
- 
+
 hi! link haskellTH GruvboxAquaBold
 hi! link haskellForeignKeywords GruvboxGreen
 hi! link haskellKeyword GruvboxRed
@@ -1540,7 +1546,7 @@ hi! link mailHeaderKey GruvBoxBlue
 hi! link mailHeaderEmail GruvBoxBlue
 hi! link mailSubject GruvboxBlue
 
-" mail quoted text 
+" mail quoted text
 hi! link mailQuoted1 GruvBoxAqua
 hi! link mailQuoted2 GruvBoxPurple
 hi! link mailQuoted3 GruvBoxYellow
@@ -1558,10 +1564,10 @@ hi! link mailQuotedExp6 GruvBoxOrange
 " I did not discover yet for what this is used
 " hi! link mailVerbatim GruvBoxRed
 
-" mail signature 
-hi! link mailSignature GruvBoxFg 
+" mail signature
+hi! link mailSignature GruvBoxFg
 
-" mail url and emails 
+" mail url and emails
 hi! link mailURL GruvBoxOrange
 hi! link mailEmail GruvBoxOrange
 
