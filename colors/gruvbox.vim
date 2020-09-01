@@ -748,7 +748,7 @@ call s:HL('DiffAdd',    s:gb.green, s:sign_column, s:invert_diff)
 "call s:HL('DiffText',   s:gb.bg0, s:gb.yellow)
 
 " Alternative setting
-call s:HL('DiffChange', s:gb.aqua, s:sign_column, s:invert_diff) 
+call s:HL('DiffChange', s:gb.aqua, s:sign_column, s:invert_diff)
 call s:HL('DiffText',   s:gb.yellow, s:sign_column, s:invert_diff)
 
 " }}}
@@ -904,6 +904,7 @@ let g:fzf_colors = {
       \ 'bg+':     ['fg', 'GruvboxBg1'],
       \ 'hl+':     ['fg', 'GruvboxYellow'],
       \ 'info':    ['fg', 'GruvboxBlue'],
+      \ 'border':  ['fg', 'GruvboxOrange'],
       \ 'prompt':  ['fg', 'GruvboxFg4'],
       \ 'pointer': ['fg', 'GruvboxBlue'],
       \ 'marker':  ['fg', 'GruvboxOrange'],
