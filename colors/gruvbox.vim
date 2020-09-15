@@ -1596,7 +1596,8 @@ hi! link rustDefault GruvboxAqua
 
 hi! link ocamlOperator GruvBoxAqua
 hi! link ocamlKeyChar GruvBoxAqua
-hi! link ocamlType GruvboxYellow
+hi! link ocamlArrow GruvboxAqua
+hi! link ocamlInfixOpKeyword GruvboxAqua
 
 " }}}
 
