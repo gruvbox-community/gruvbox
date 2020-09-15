@@ -1592,6 +1592,14 @@ hi! link rustDefault GruvboxAqua
 
 " }}}
 
+" Ocaml: {{{
+
+hi! link ocamlOperator GruvBoxAqua
+hi! link ocamlKeyChar GruvBoxAqua
+hi! link ocamlType GruvboxYellow
+
+" }}}
+
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
