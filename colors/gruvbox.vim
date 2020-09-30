@@ -1598,6 +1598,7 @@ hi! link ocamlOperator GruvBoxAqua
 hi! link ocamlKeyChar GruvBoxAqua
 hi! link ocamlArrow GruvboxAqua
 hi! link ocamlInfixOpKeyword GruvboxAqua
+hi! link ocamlConstructor GruvboxYellow
 
 " }}}
 
