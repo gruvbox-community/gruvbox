@@ -444,10 +444,52 @@ if exists('g:gruvbox_italicize_strings')
   endif
 endif
 
+let s:italicize_statements = ''
+if exists('g:gruvbox_italicize_statements')
+  if g:gruvbox_italicize_statements == 1
+    let s:italicize_statements = s:italic
+  endif
+endif
+
+let s:italicize_conditionals = ''
+if exists('g:gruvbox_italicize_conditionals')
+  if g:gruvbox_italicize_conditionals == 1
+    let s:italicize_conditionals = s:italic
+  endif
+endif
+
+let s:italicize_repeats = ''
+if exists('g:gruvbox_italicize_repeats')
+  if g:gruvbox_italicize_repeats == 1
+    let s:italicize_repeats = s:italic
+  endif
+endif
+
+let s:italicize_labels = ''
+if exists('g:gruvbox_italicize_labels')
+  if g:gruvbox_italicize_labels == 1
+    let s:italicize_labels = s:italic
+  endif
+endif
+
+let s:italicize_exceptions = ''
+if exists('g:gruvbox_italicize_exceptions')
+  if g:gruvbox_italicize_exceptions == 1
+    let s:italicize_exceptions = s:italic
+  endif
+endif
+
 let s:italicize_operators = ''
 if exists('g:gruvbox_italicize_operators')
   if g:gruvbox_italicize_operators == 1
     let s:italicize_operators = s:italic
+  endif
+endif
+
+let s:italicize_keywords = ''
+if exists('g:gruvbox_italicize_keywords')
+  if g:gruvbox_italicize_keywords == 1
+    let s:italicize_keywords = s:italic
   endif
 endif
 
@@ -681,19 +723,19 @@ call s:HL('Todo', s:vim_fg, s:none, s:bold . s:italic)
 call s:HL('Error', s:gb.red, s:none, s:bold . s:inverse)
 
 " Generic statement
-hi! link Statement GruvboxRed
+call s:HL('Statement', s:gb.red, s:none, s:italicize_statements)
 " if, then, else, endif, switch, etc.
-hi! link Conditional GruvboxRed
+call s:HL('Conditional', s:gb.red, s:none, s:italicize_conditionals)
 " for, do, while, etc.
-hi! link Repeat GruvboxRed
+call s:HL('Repeat', s:gb.red, s:none, s:italicize_repeats)
 " case, default, etc.
-hi! link Label GruvboxRed
+call s:HL('Label', s:gb.red, s:none, s:italicize_labels)
 " try, catch, throw
-hi! link Exception GruvboxRed
+call s:HL('Exception', s:gb.red, s:none, s:italicize_exceptions)
 " sizeof, "+", "*", etc.
 call s:HL('Operator',  s:gb.orange, s:none, s:italicize_operators)
 " Any other keyword
-hi! link Keyword GruvboxRed
+call s:HL('Keyword', s:gb.red, s:none, s:italicize_keywords)
 
 " Variable name
 hi! link Identifier GruvboxBlue
