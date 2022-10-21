@@ -430,10 +430,10 @@ if exists('g:gruvbox_tabline_sel')
   let s:tabline_sel = get(s:gb, g:gruvbox_tabline_sel)
 endif
 
-let s:italicize_comments = s:italic
+let s:italicize_comments = ''
 if exists('g:gruvbox_italicize_comments')
-  if g:gruvbox_italicize_comments == 0
-    let s:italicize_comments = ''
+  if g:gruvbox_italicize_comments == 1
+    let s:italicize_comments = s:italic
   endif
 endif
 
