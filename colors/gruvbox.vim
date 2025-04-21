@@ -630,8 +630,13 @@ call s:HL('QuickFixLine', s:gb.bg0, s:gb.yellow, s:bold)
 
 call s:HL('Underlined', s:fg3, s:none, s:underline)
 
-call s:HL('StatusLine', s:gb.bg2, s:gb.fg1, s:inverse)
-call s:HL('StatusLineNC', s:gb.bg1, s:gb.fg4, s:inverse)
+if has('nvim-0.11')
+  call s:HL('StatusLine', s:gb.bg2, s:gb.fg1)
+  call s:HL('StatusLineNC', s:gb.bg1, s:gb.fg4)
+else
+  call s:HL('StatusLine', s:gb.bg2, s:gb.fg1, s:inverse)
+  call s:HL('StatusLineNC', s:gb.bg1, s:gb.fg4, s:inverse)
+endif
 
 " The column separating vertically split windows
 call s:HL('VertSplit', s:gb.bg3, s:vert_split)
