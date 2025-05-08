@@ -568,7 +568,7 @@ call s:HL('GruvboxOrangeUnderline', s:none, s:none, s:undercurl, s:gb.orange)
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:gb.fg1)
+call s:HL('Normal', s:gb.fg1, s:bg0)
 
 " Correct background (see issue #7):
 " --- Problem with changing between dark and light on 256 color terminal
